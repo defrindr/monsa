@@ -14,6 +14,20 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
+                    {{-- Form Search --}}
+                    <div class="row justify-content-end">
+                        <div class="col-md-6">
+                            <form action="">
+                                <div class="d-flex gap-2 justify-content-center items-center mb-3" style="gap:1rem">
+                                    <input type="text" class="form-control" id="keywords" name="keywords"
+                                        value="{{ old('keywords', request('keywords')) }}" placeholder="Cari ...">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -43,8 +57,7 @@
                                                 class="d-inline-block">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class="btn btn-danger  btn-sm"><i
-                                                        class="fas fa-trash"></i></button>
+                                                <button class="btn btn-danger  btn-sm"><i class="fas fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>

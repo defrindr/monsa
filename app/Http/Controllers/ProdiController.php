@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProdiRequest;
 use App\Http\Requests\UpdateProdiRequest;
 use App\Models\Prodi;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class ProdiController extends Controller
@@ -12,9 +13,13 @@ class ProdiController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $query = Prodi::query();
+        if ($request->has('keywords')) {
+            $keywords = $request->get('keywords');
+            $query->where('name', 'like', "%$keywords%");
+        }
         $paginate = $query->paginate(10);
         return view('pages.admin.prodi.index', compact('paginate'));
     }
