@@ -21,11 +21,17 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-    <!-- Nav Item - Dashboard -->
+    <!-- Nav Item - Prodi -->
     <li class="nav-item {{ Nav::isRoute('admin.prodi.index') }}">
         <a class="nav-link" href="{{ route('admin.prodi.index') }}">
             <i class="fas fa-fw fa-file"></i>
             <span>{{ __('Prodi') }}</span></a>
+    </li>
+    <!-- Nav Item - Mahasiswa -->
+    <li class="nav-item {{ Nav::isRoute('admin.mahasiswa.index') }}">
+        <a class="nav-link" href="{{ route('admin.mahasiswa.index') }}">
+            <i class="fas fa-fw fa-user"></i>
+            <span>{{ __('Mahasiswa') }}</span></a>
     </li>
 
     <!-- Divider -->
