@@ -33,6 +33,12 @@
             <i class="fas fa-fw fa-user"></i>
             <span>{{ __('Mahasiswa') }}</span></a>
     </li>
+    <!-- Nav Item - Mata Kuliah -->
+    <li class="nav-item {{ Nav::isRoute('admin.matkul.index') }}">
+        <a class="nav-link" href="{{ route('admin.matkul.index') }}">
+            <i class="fas fa-fw fa-user"></i>
+            <span>{{ __('Mata Kuliah') }}</span></a>
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
