@@ -15,7 +15,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item {{ Nav::isRoute('admin.home') }}">
         <a class="nav-link" href="{{ route('admin.home') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-house"></i>
             <span>{{ __('Dashboard') }}</span></a>
     </li>
 
@@ -27,7 +27,7 @@
     <!-- Nav Item - Prodi -->
     <li class="nav-item {{ Nav::isRoute('admin.prodi.index') }}">
         <a class="nav-link" href="{{ route('admin.prodi.index') }}">
-            <i class="fas fa-fw fa-file"></i>
+            <i class="fas fa-fw fa-box"></i>
             <span>{{ __('Prodi') }}</span></a>
     </li>
     <!-- Nav Item - Mahasiswa -->
@@ -39,8 +39,15 @@
     <!-- Nav Item - Mata Kuliah -->
     <li class="nav-item {{ Nav::isRoute('admin.matkul.index') }}">
         <a class="nav-link" href="{{ route('admin.matkul.index') }}">
-            <i class="fas fa-fw fa-user"></i>
+            <i class="fas fa-fw fa-file"></i>
             <span>{{ __('Mata Kuliah') }}</span></a>
+    </li>
+
+    <!-- Nav Item - Dosen -->
+    <li class="nav-item {{ Nav::isRoute('admin.dosen.index') }}">
+        <a class="nav-link" href="{{ route('admin.dosen.index') }}">
+            <i class="fas fa-fw fa-user"></i>
+            <span>{{ __('Dosen') }}</span></a>
     </li>
 
     <!-- Divider -->
