@@ -51,7 +51,7 @@ class DosenController extends Controller
     {
         try {
             DB::beginTransaction();
-            $payload = $request->only('name', 'password', 'nip');
+            $payload = $request->only('name', 'email', 'password', 'nip');
             $user = User::create($payload);
 
             // Assign user to dosen

@@ -19,6 +19,34 @@ class Kelas extends Model
         return $this->belongsTo(Prodi::class);
     }
 
+    public function kelasMahasiswas()
+    {
+        return $this->hasMany(KelasMahasiswa::class);
+    }
+
+    public function mahasiswas()
+    {
+        return $this->belongsToMany(
+            Mahasiswa::class,
+            'kelas_mahasiswas',
+            'kelas_id',
+            'mahasiswa_id'
+        );
+    }
+
+    public function matkuls()
+    {
+        return $this
+            ->belongsToMany(
+                Matkul::class,
+                'dosen_matakuliahs',
+                'kelas_id',
+                'matakuliah_id',
+            )
+            ->withPivot('dosen_id')
+            ->withTimestamps();
+    }
+
     public function getFullNameAttribute()
     {
         return "{$this->prodi->name} | {$this->name} {$this->year}";

@@ -13,4 +13,9 @@ class Matkul extends Model
     protected $table = 'matkuls';
     protected $fillable = ['name'];
     protected $casts = ['deleted_at' => 'datetime'];
+
+    public function dosenMatakuliahs()
+    {
+        return $this->hasMany(DosenMatakuliah::class, 'matakuliah_id');
+    }
 }

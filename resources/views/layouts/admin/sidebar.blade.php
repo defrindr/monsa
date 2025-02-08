@@ -62,6 +62,12 @@
             <i class="fas fa-fw fa-user"></i>
             <span>{{ __('Kelas') }}</span></a>
     </li>
+    <!-- Nav Item - Penilaian -->
+    <li class="nav-item {{ Nav::isRoute('admin.penilaian.index') }}">
+        <a class="nav-link" href="{{ route('admin.penilaian.index') }}">
+            <i class="fas fa-fw fa-chart-line"></i>
+            <span>{{ __('Penilaian') }}</span></a>
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">

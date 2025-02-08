@@ -6,6 +6,7 @@ use App\Http\Controllers\Kelas\KelasMatkulController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MatkulController;
+use App\Http\Controllers\PenilaianController;
 use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -55,6 +56,12 @@ Route::name('admin.')->middleware('auth')->group(function () {
     Route::resource('kelas.mahasiswa', KelasMahasiswaController::class)
         ->except(['index', 'show', 'edit', 'update'])
         ->parameters(['kelas' => 'model']);
+
+    Route::group(attributes: ['prefix' => 'penilaian', 'as' => 'penilaian.'], routes: function () {
+        Route::get('/', [PenilaianController::class, 'index'])->name('index');
+        Route::get('/{model}', [PenilaianController::class, 'nilai'])->name('nilai');
+        Route::put('/{model}', [PenilaianController::class, 'update'])->name('update');
+    });
 
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
