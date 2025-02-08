@@ -22,10 +22,10 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item {{ Nav::isRoute('admin.home') }}">
-        <a class="nav-link" href="{{ route('admin.home') }}">
+    <li class="nav-item {{ Nav::isRoute('admin.prodi.index') }}">
+        <a class="nav-link" href="{{ route('admin.prodi.index') }}">
             <i class="fas fa-fw fa-file"></i>
-            <span>{{ __('Report') }}</span></a>
+            <span>{{ __('Prodi') }}</span></a>
     </li>
 
     <!-- Divider -->

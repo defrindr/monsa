@@ -24,7 +24,7 @@ Auth::routes(['register' => false, 'reset' => false, 'confirm' => false]);
 Route::name('admin.')->middleware('auth')->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::resource('prodi', ProdiController::class);
+    Route::resource('prodi', ProdiController::class)->parameters(['prodi' => 'model']);
 
 
     Route::get('/profile', 'ProfileController@index')->name('profile');

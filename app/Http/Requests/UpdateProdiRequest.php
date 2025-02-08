@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateProdiRequest extends FormRequest
 {
@@ -22,7 +23,10 @@ class UpdateProdiRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
+            'name' => [
+                'required',
+                Rule::unique('prodis', 'name')->ignore($this->model)
+            ],
         ];
     }
 }

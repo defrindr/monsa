@@ -43,18 +43,18 @@ class ProdiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Prodi $prodi)
+    public function edit(Prodi $model)
     {
-        return view('pages.admin.prodi.edit', compact('prodi'));
+        return view('pages.admin.prodi.edit', compact('model'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProdiRequest $request, Prodi $prodi)
+    public function update(UpdateProdiRequest $request, Prodi $model)
     {
         try {
-            $prodi->update($request->validated());
+            $model->update($request->validated());
             return Redirect::route('admin.prodi.index')->with(['success' => 'Data Prodi berhasil diubah']);
         } catch (\Throwable $th) {
             return Redirect::back()->withInput()->with(['error' => $th->getMessage()]);
@@ -64,10 +64,10 @@ class ProdiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Prodi $prodi)
+    public function destroy(Prodi $model)
     {
         try {
-            $prodi->delete();
+            $model->delete();
             return Redirect::route('admin.prodi.index')->with(['success' => 'Data Prodi berhasil dihapus']);
         } catch (\Throwable $th) {
             return Redirect::back()->withInput()->with(['error' => $th->getMessage()]);
