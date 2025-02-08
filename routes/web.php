@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\MatkulController;
 use App\Http\Controllers\ProdiController;
@@ -29,6 +30,7 @@ Route::name('admin.')->middleware('auth')->group(function () {
     Route::resource('prodi', ProdiController::class)->parameters(['prodi' => 'model']);
     Route::resource('mahasiswa', MahasiswaController::class)->parameters(['mahasiswa' => 'model']);
     Route::resource('matkul', MatkulController::class)->parameters(['matkul' => 'model']);
+    Route::resource('kelas', KelasController::class)->parameters(['kelas' => 'model']);
 
 
     Route::get('/profile', 'ProfileController@index')->name('profile');

@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ProdiSeeder::class,
             MahasiswaSeeder::class,
-            MatkulSeeder::class, //
+            MatkulSeeder::class,
+            KelasSeeder::class,
         ]);
     }
 }

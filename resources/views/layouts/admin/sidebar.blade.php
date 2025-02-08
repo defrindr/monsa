@@ -21,6 +21,9 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
+    <div class="sidebar-heading">
+        {{ __('Master Data') }}
+    </div>
     <!-- Nav Item - Prodi -->
     <li class="nav-item {{ Nav::isRoute('admin.prodi.index') }}">
         <a class="nav-link" href="{{ route('admin.prodi.index') }}">
@@ -38,6 +41,19 @@
         <a class="nav-link" href="{{ route('admin.matkul.index') }}">
             <i class="fas fa-fw fa-user"></i>
             <span>{{ __('Mata Kuliah') }}</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    <div class="sidebar-heading">
+        {{ __('Transaksi') }}
+    </div>
+
+    <!-- Nav Item - Kelas -->
+    <li class="nav-item {{ Nav::isRoute('admin.kelas.index') }}">
+        <a class="nav-link" href="{{ route('admin.kelas.index') }}">
+            <i class="fas fa-fw fa-user"></i>
+            <span>{{ __('Kelas') }}</span></a>
     </li>
 
     <!-- Divider -->
