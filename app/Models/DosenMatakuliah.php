@@ -9,7 +9,7 @@ class DosenMatakuliah extends Model
 {
     use HasFactory;
     protected $table = 'dosen_matakuliahs';
-    protected $fillable = ['dosen_id', 'matkul_id', 'kelas_id'];
+    protected $fillable = ['dosen_id', 'matakuliah_id', 'kelas_id'];
 
     public function dosen()
     {
@@ -18,7 +18,7 @@ class DosenMatakuliah extends Model
 
     public function matakuliah()
     {
-        return $this->belongsTo(Matkul::class);
+        return $this->belongsTo(Matkul::class, 'matakuliah_id');
     }
 
     public function kelas()

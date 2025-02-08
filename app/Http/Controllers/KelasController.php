@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreKelasRequest;
 use App\Http\Requests\UpdateKelasRequest;
+use App\Models\DosenMatakuliah;
 use App\Models\Kelas;
+use App\Models\Matkul;
 use App\Models\Prodi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -35,6 +37,14 @@ class KelasController extends Controller
         // Fetch paginated results (prevents excessive data load)
         $paginate = $query->paginate(10);
         return view('pages.admin.kelas.index', compact('paginate'));
+    }
+
+    public function show(Kelas $model)
+    {
+        $matkulPaginate = DosenMatakuliah::query()
+            ->paginate(10, ['*'], 'matkul');
+
+        return view('pages.admin.kelas.show', compact('model', 'matkulPaginate'));
     }
 
     /**

@@ -48,6 +48,9 @@
                                         </td>
                                         <td>{{ $item->fullName }}</td>
                                         <td>
+                                            <a href="{{ route('admin.kelas.show', $item) }}" class="btn btn-info btn-sm">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
                                             <a href="{{ route('admin.kelas.edit', $item) }}" class="btn btn-warning btn-sm">
                                                 <i class="fas fa-edit"></i>
                                             </a>
