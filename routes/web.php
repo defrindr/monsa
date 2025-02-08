@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,7 @@ Route::name('admin.')->middleware('auth')->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::resource('prodi', ProdiController::class)->parameters(['prodi' => 'model']);
+    Route::resource('mahasiswa', MahasiswaController::class)->parameters(['mahasiswa' => 'model']);
 
 
     Route::get('/profile', 'ProfileController@index')->name('profile');

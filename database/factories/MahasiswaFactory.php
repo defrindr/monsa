@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Device>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Mahasiswa>
  */
-class DeviceFactory extends Factory
+class MahasiswaFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,8 @@ class DeviceFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nrp' => $this->faker->unique()->numberBetween(100000, 999999),
+            'name' => $this->faker->name(),
         ];
     }
 }
