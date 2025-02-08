@@ -24,7 +24,7 @@ class StoreKelasRequest extends FormRequest
         return [
             'prodi_id' => ['required', 'integer', 'exists:prodis,id'],
             'name' => ['required', 'string', 'max:255'],
-            'year' => ['required', 'integer'],
+            'year' => ['required', 'integer', 'max:2999', 'min: 2000'],
         ];
     }
 }
