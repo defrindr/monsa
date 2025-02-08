@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\Kelas\KelasMahasiswaController;
 use App\Http\Controllers\Kelas\KelasMatkulController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MahasiswaController;
@@ -47,6 +48,11 @@ Route::name('admin.')->middleware('auth')->group(function () {
 
 
     Route::resource('kelas.matkul', KelasMatkulController::class)
+        ->except(['index', 'show', 'edit', 'update'])
+        ->parameters(['kelas' => 'model']);
+
+
+    Route::resource('kelas.mahasiswa', KelasMahasiswaController::class)
         ->except(['index', 'show', 'edit', 'update'])
         ->parameters(['kelas' => 'model']);
 

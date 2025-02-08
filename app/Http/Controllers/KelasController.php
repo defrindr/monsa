@@ -6,6 +6,7 @@ use App\Http\Requests\StoreKelasRequest;
 use App\Http\Requests\UpdateKelasRequest;
 use App\Models\DosenMatakuliah;
 use App\Models\Kelas;
+use App\Models\KelasMahasiswa;
 use App\Models\Matkul;
 use App\Models\Prodi;
 use Illuminate\Http\Request;
@@ -42,9 +43,14 @@ class KelasController extends Controller
     public function show(Kelas $model)
     {
         $matkulPaginate = DosenMatakuliah::query()
+            ->where(['kelas_id' => $model->id])
             ->paginate(10, ['*'], 'matkul');
 
-        return view('pages.admin.kelas.show', compact('model', 'matkulPaginate'));
+        $mahasiswaPaginate = KelasMahasiswa::query()
+            ->where(['kelas_id' => $model->id])
+            ->paginate(10, ['*'], 'mahasiswa');
+
+        return view('pages.admin.kelas.show', compact('model', 'matkulPaginate', 'mahasiswaPaginate'));
     }
 
     /**
